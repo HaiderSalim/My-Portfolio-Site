@@ -1,0 +1,43 @@
+.custom-cursor {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: radial-gradient(orange, rgb(212, 145, 1));
+    box-shadow: 0 0 8px white,
+                0 0 5px white,
+                0 0 2px white;
+    opacity: 80%;
+    outline: rgb(43, 43, 43) solid 2px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, left 0.13s ease, top 0.13s ease;
+}
+.custom-cursor-small {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: orange;
+    outline: rgb(255, 119, 0) solid 2px ;
+    box-shadow: 0 0 25px rgba(255, 140, 0, 0.6), /* Outer glow */
+    0 0 10px rgba(255, 140, 0, 0.6), /* Mid glow */
+    0 0 5px rgba(255, 140, 0, 0.6);;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, left 0.02s ease, top 0.02s ease;
+}
+body
+{
+    cursor: none;
+}
+
+.custom-cursor.click, .custom-cursor-small.click {
+    animation: clickAnimation 0.3s ease;
+}
+
+@keyframes clickAnimation {
+    0% { transform: scale(1) translate(-50%, -50%); }
+    50% { transform: scale(1.5) translate(-50%, -50%); }
+    100% { transform: scale(1) translate(-50%, -50%); }
+}
